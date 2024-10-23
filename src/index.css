@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+ul{
+  list-style:none;
+}
+
+li{
+  background-color: gray;
+  padding:5px 20px;
+  border-radius: 10px;
+  display:inline-block;
+  color:white;
+}
+
+input{
+  display:block;
+  margin-top: 5px;
+  padding: 5px;
+}
+
+
+button{
+  padding:5px;
+  margin-top:5px;
+}
+
+.container{
+  display:flex;
+  justify-content: center;
+}
+
+section{
+  display:flex;
+}

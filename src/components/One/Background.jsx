@@ -5,5 +5,4 @@ const Background = (props) => {
     <div className='border-red'>{props.children}</div>
   )
 }
-
 export default Background
