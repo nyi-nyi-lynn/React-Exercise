@@ -14,3 +14,12 @@ button{
 span{
     font-size: 30px;
 }
+
+input{
+    display :block;
+    font:10px;
+}
+
+.card{
+    margin :20px;
+}
