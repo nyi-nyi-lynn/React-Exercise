@@ -1,19 +1,24 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import "./App.css";
 
 function App() {
-    const [name,setName] = useState("");
+  const [num, setNum] = useState(0);
 
-    useEffect(()=>{
-      console.log(name);  
-    },[name]);
-    
   return (
-      <>
-        <h1>React App</h1>
-        <label htmlFor="name">Enter your name</label>
-        <input type="text" onChange={(e)=>{setName(e.target.value)}} />
-      </>
+    <>
+      <h1>Number Count React App</h1>
+      <div className="container">
+        <button onClick={
+          (e)=>{
+            setNum((prev)=>prev+1)
+          }
+        }>+</button>
+        <span>{num}</span>
+        <button className="minus" onClick={(e)=>{
+          setNum((prev)=>prev -1)
+        }}>-</button>
+      </div>
+    </>
   );
 }
 
