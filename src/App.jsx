@@ -1,31 +1,41 @@
-import {  useReducer} from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
- const countReducer = (state,action)=>{
-    switch(action.type){
-      case "plus" : 
-         return {...state , count:state.count++,};
-      case "minus" :
-        return {...state, count:state.count--};
-        case "updateText" :
-          return {...state,text:action.payload};
-      default:
-         throw new  Error();
-    }
- };
 
 function App() {
-  const [state,dispatch] = useReducer(countReducer,{count:0,text:""});
+  const fetchData = async () => {
+    const response = await fetch("https://fakestoreapi.com/products");
+    const data = await response.json();
+    setProducts(data);
+  };
+
+  const [porducts, setProducts] = useState([]);
+  useEffect(() => {
+    fetchData();
+  });
+ 
   return (
-    <div className="card">
-      <h1>Number Count React App</h1>
-      <input type="text" name="" id="" onChange={(e)=>dispatch({type: "updateText" , payload:e.target.value})} />
-        <p>your text is {state.text}</p>
-      <div className="container">
-        <button onClick={(e)=>{dispatch({type:"plus"})}}>+</button>
-        <span>{state.count}</span>
-        <button className="minus" onClick={(e)=>{dispatch({type:"minus"})}}>-</button>
-      </div>
-    </div>
+    <section>
+      <table>
+       <thead>
+       <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Price</th>
+        </tr>
+       </thead>
+       <tbody>
+
+          {porducts.map((product) => (
+            <tr key={product.id}>
+              <td>{product.id}</td>
+              <td>{product.title}</td>
+              <td>{product.price}</td>
+            </tr>
+          ))}
+   
+       </tbody>
+      </table>
+    </section>
   );
 }
 
