@@ -13,3 +13,34 @@ table {
   tr:nth-child(even) {
     background-color: #dddddd;
   }
+
+  .container{
+    padding : 5px 50px;
+  }
+
+  .search-box{
+    margin-top: 20px; 
+   margin-left: 50px;
+   margin-bottom: 0;
+  }
+
+  .search-input{
+    margin-right : 10px;
+    font-size: 15px;
+    border-radius : 5px;
+    display : inline-block;
+  }
+
+  .btn{
+    padding : 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .btn-primary{
+    background-color: blue;
+    color:white;
+  }
+
+  .error-output{
+    margin-left :50px;
+  }
